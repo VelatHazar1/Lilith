@@ -7,7 +7,7 @@
 
 <script setup>
 import MainLayout from "./MainLayout.vue";
-import ShoppingLayout from "./shoppinglayout.vue";
+import ShoppingLayout from "./ShoppingLayout.vue";
 import AboutLayout from "./AboutLayout.vue";
 import MasonryImageGallery from "./MasonryImageGallery.vue";
 </script>
