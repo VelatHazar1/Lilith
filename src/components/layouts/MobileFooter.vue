@@ -1,9 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <div class="brand">
-        <p>Follow Us</p>
-      </div>
+      <div class="brand"><p>Follow Us</p></div>
       <div class="navigation">
         <Icon icon="bi:instagram" color="white" width="20" height="25" />
         <Icon icon="ic:round-tiktok" color="white" width="25" height="25" />
@@ -22,4 +20,4 @@
 import { Icon } from "@iconify/vue";
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

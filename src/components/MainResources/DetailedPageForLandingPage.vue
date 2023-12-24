@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="slider">
-      <TransitionGroup name="list" tag="ul" class="images">
+      <TransitionGroup name="list" tag="ul" class="images" ref="el">
         <li
           v-for="item in items.slice(
             currentVisibleImage - 1,
@@ -43,31 +43,11 @@
 </template>
 
 <script setup lang="ts">
+import { useSwipe } from "@vueuse/core";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
-AOS.init({
-  // Global settings:
-  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-  startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-  initClassName: "aos-init", // class applied after initialization
-  animatedClassName: "aos-animate", // class applied on animation
-  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120, // offset (in px) from the original trigger point
-  delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 800, // values from 0 to 3000, with step 50ms
-  easing: "ease", // default easing for AOS animations
-  once: false, // whether animation should happen only once - while scrolling down
-  mirror: false, // whether elements should animate out while scrolling past them
-  anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-});
-
-import { reactive, ref } from "vue";
+import { reactive, ref, watch } from "vue";
 import img1 from "../../assets/detailedPageImages/8932bd_0ea5dddf65214f5d80d5113e87e7510f~mv2.webp";
 import img2 from "../../assets/detailedPageImages/8932bd_675ba1374a5a44af80a36a29a62cc37d~mv2.webp";
 import img3 from "../../assets/detailedPageImages/8932bd_bb5dfe2e309a42869a7948bbbde938aa~mv2.webp";
@@ -101,6 +81,23 @@ let currentVisibleImage = ref<number>(1);
 const changeImage = (imageNumber: number) => {
   currentVisibleImage.value = imageNumber;
 };
+
+AOS.init({
+  duration: 800, // values from 0 to 3000, with step 50ms
+});
+
+const el = ref(null);
+const { isSwiping, direction } = useSwipe(el);
+
+watch(isSwiping, (value) => {
+  if (value) {
+    if (direction.value === "left") {
+      currentVisibleImage.value++;
+    } else if (direction.value === "right") {
+      currentVisibleImage.value--;
+    }
+  }
+});
 </script>
 
 <style scoped lang="scss">

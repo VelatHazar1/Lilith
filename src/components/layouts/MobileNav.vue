@@ -41,7 +41,7 @@ const toggleMobileNav = function () {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $color_1: #fff;
 $color_2: antiquewhite;
 $background-color_1: #fff;
