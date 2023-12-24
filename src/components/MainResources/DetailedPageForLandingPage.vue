@@ -70,6 +70,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url("../../assets/images/main-background.png");
+  background-size: cover;
 }
 .main-contents {
   display: flex;
