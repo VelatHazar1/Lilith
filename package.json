@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "sass": "^1.69.5",
     "swiper": "^11.0.5",
     "vue": "^3.3.4",
