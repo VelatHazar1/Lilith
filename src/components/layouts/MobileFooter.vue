@@ -22,4 +22,4 @@
 import { Icon } from "@iconify/vue";
 </script>
 
-<style></style>
+<style scoped></style>

@@ -36,12 +36,15 @@ const toggleMobileNav = function () {
 };
 </script>
 
-<style scoped>
+<style>
 .brand {
-  z-index: 1000;
+  z-index: 110;
 }
 .hamburger-menu {
-  z-index: 1000;
+  z-index: 100;
+}
+.mobile-nav {
+  z-index: 98;
 }
 .hamburger-menu div:nth-child(1) {
   display: block;
@@ -113,8 +116,14 @@ const toggleMobileNav = function () {
   background-color: #333d29;
 }
 .mobile-nav a {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff;
+  text-decoration: none;
+  transition: 0.4s;
+}
+.mobile-nav a:hover {
+  font-size: 2rem;
+  color: antiquewhite;
   text-decoration: none;
 }
 </style>

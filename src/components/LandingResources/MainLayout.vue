@@ -62,8 +62,8 @@
   flex-direction: column;
 }
 .sum-of-slogan p {
-  margin: 2rem 2rem 2rem 4rem;
   width: 26rem;
+  padding: 1.2rem;
 
   font-size: 1.5rem;
   font-style: italic;
@@ -72,9 +72,6 @@
 }
 
 @media (max-width: 990px) {
-  .main {
-    height: auto;
-  }
   .main-container {
     margin: 2rem;
     flex-direction: column;

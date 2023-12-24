@@ -28,13 +28,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .about {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  margin: 5rem;
 }
 .about-info {
   display: flex;
@@ -59,9 +59,14 @@
   font-weight: 300;
 }
 @media (max-width: 990px) {
+  .main {
+    width: 100%;
+  }
+
   .about {
     flex-direction: column-reverse;
     gap: 2rem;
+    margin: 2rem;
   }
   .about-info {
     align-items: center;

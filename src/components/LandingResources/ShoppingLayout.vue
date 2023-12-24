@@ -63,12 +63,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .main-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 80%;
 }
 
@@ -96,7 +94,8 @@ h1 {
     height: auto;
   }
   .main-container {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
   }
   img {
     width: 20rem;
