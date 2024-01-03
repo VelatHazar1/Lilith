@@ -84,12 +84,12 @@ $color_1: #000;
   }
   .about-info {
     align-items: center;
-    text-align: center;
 
     gap: 1;
     width: 100%;
     padding: 1rem;
     h1 {
+      text-align: center;
       font-size: 2.5rem;
     }
     p {
