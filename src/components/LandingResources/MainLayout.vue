@@ -2,13 +2,13 @@
   <router-view>
     <div class="main">
       <div class="main-container">
-        <div class="landing-image">
+        <div class="landing-image" data-aos="fade-left">
           <img
             src="../../assets/images/landing image.png"
             alt="Image of Classic Terra House"
           />
         </div>
-        <div class="landing-information">
+        <div class="landing-information" data-aos="fade-right">
           <div class="slogan">
             <h1>STRIKING FORESTS</h1>
             <h1>WITHIN</h1>
@@ -29,15 +29,20 @@
     </div>
   </router-view>
 </template>
-<script setup></script>
+<script setup>
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init({
+  duration: 800, // values from 0 to 3000, with step 50ms
+});
+</script>
 
-<style scoped>
+<style scoped lang="scss">
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-
   background-image: url("../../assets/images/main-background.png");
   background-size: cover;
 }
@@ -46,46 +51,77 @@
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  .landing-image {
+    img {
+      width: 100%;
+    }
+  }
 }
-
-.slogan h1 {
-  text-align: center;
-  font-size: 5rem;
-  font-style: italic;
-  font-weight: 300;
-  line-height: normal;
+.slogan {
+  h1 {
+    text-align: center;
+    font-size: 4.5em;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+  }
 }
 .sum-of-slogan {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  p {
+    max-width: 30rem;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+  }
 }
-.sum-of-slogan p {
-  width: 26rem;
-  padding: 1.2rem;
-
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 300;
-  line-height: normal;
-}
-
-@media (max-width: 990px) {
+@media (max-width: 600px) {
+  .main {
+    height: auto;
+  }
   .main-container {
     margin: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .slogan h1 {
-    font-size: 2rem;
+  .slogan {
+    h1 {
+      font-size: 2rem;
+    }
   }
-  .sum-of-slogan p {
-    width: 20rem;
+  .sum-of-slogan {
+    p {
+      width: 20rem;
+    }
   }
-  .landing-image img {
-    width: 22rem;
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    height: auto;
+  }
+  .main-container {
+    margin: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .slogan {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  .sum-of-slogan {
+    p {
+      text-align: center;
+      width: 30rem;
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

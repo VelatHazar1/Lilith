@@ -27,7 +27,7 @@
           <div class="shopping-info">
             <p>
               Classic terrarium design revolves around the timeless beauty of
-              clear glass containers, sealed ecosystems, layered composition.
+              clear glass containers, layered composition.
             </p>
           </div>
 
@@ -45,8 +45,7 @@
           <div class="shopping-info">
             <p>
               Minimal terrarium design is characterized by simplicity, neutral
-              colors, a focus on essential elements, and a clean, uncluttered
-              aesthetic.
+              colors, and a clean, uncluttered aesthetic.
             </p>
           </div>
           <router-link to="/main/minimal">
@@ -57,8 +56,14 @@
     </div>
   </div>
 </template>
-<script></script>
-<style scoped>
+<script setup>
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+AOS.init({
+  duration: 800, // values from 0 to 3000, with step 50ms
+});
+</script>
+<style scoped lang="scss">
 .main {
   display: flex;
   justify-content: center;
@@ -68,25 +73,27 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
+  gap: 3rem;
 }
-
 .shopping-card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-}
-.shopping-card p {
-  width: 15rem;
-  height: 10rem;
-
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 300;
-}
-h1 {
-  font-weight: 300;
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 300;
+    padding: 2rem;
+    text-align: center;
+  }
+  h1 {
+    font-weight: 300;
+  }
 }
 
 @media (max-width: 990px) {
@@ -96,9 +103,29 @@ h1 {
   .main-container {
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    gap: 0;
   }
   img {
     width: 20rem;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    height: auto;
+  }
+  .main-container {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  img {
+    width: 30rem;
+  }
+  .shopping-card {
+    p {
+      width: 25rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

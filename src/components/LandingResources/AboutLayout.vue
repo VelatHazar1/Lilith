@@ -13,18 +13,19 @@
           ><base-button>Learn More</base-button></router-link
         >
       </div>
-      <div class="img">
+      <div class="image">
         <img src="../../assets/images/about.png" alt="" />
       </div>
     </div>
   </div>
 </template>
 <script></script>
-<style scoped>
+<style scoped lang="scss">
+$color_1: #000;
+
 .main {
   background-image: url("../../assets/images/about-background.png");
   background-size: cover;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,27 +43,29 @@
   align-items: start;
   flex-direction: column;
   gap: 3rem;
+  width: 50%;
+  padding: 3rem;
+  h1 {
+    color: $color_1;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 200;
+  }
+  p {
+    color: $color_1;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+  }
 }
-.about-info h1 {
-  color: #000;
+.image img {
+  width: 100%;
+}
 
-  font-size: 5rem;
-  font-style: italic;
-  font-weight: 200;
-}
-.about-info p {
-  width: 37rem;
-  color: #000;
-
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 300;
-}
 @media (max-width: 990px) {
   .main {
     width: 100%;
   }
-
   .about {
     flex-direction: column-reverse;
     gap: 2rem;
@@ -70,15 +73,40 @@
   }
   .about-info {
     align-items: center;
+
+    gap: 1;
+    width: 100%;
+    padding: 1rem;
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      text-align: center;
+    }
   }
-  .about-info h1 {
-    font-size: 2rem;
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    width: 100%;
   }
-  .about-info p {
-    width: auto;
+  .about {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    margin: 2rem;
+  }
+  .about-info {
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 30rem;
+    }
   }
   img {
-    width: 22rem;
+    width: 30rem;
   }
 }
 </style>

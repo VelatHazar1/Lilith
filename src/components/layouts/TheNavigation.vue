@@ -6,9 +6,13 @@
       </div>
       <div class="navigation">
         <ul>
-          <li><a href="#">Home</a></li>
+          <router-link to="/main">
+            <li><a href="#">Home</a></li></router-link
+          >
           <li><a href="#">Shop</a></li>
-          <li><a href="#">About Us </a></li>
+          <router-link to="/main/about"
+            ><li><a href="#">About Us </a></li></router-link
+          >
           <li><a href="#">Contact </a></li>
         </ul>
       </div>
