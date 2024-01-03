@@ -84,6 +84,7 @@ $color_1: #000;
   }
   .about-info {
     align-items: center;
+    text-align: center;
 
     gap: 1;
     width: 100%;
